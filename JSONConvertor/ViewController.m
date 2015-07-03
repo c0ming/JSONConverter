@@ -33,7 +33,7 @@
 
 	id object = [self.beforeTextView.string ks_objectFromJSONString];
 	if ([object isKindOfClass:[NSArray class]]) {
-		[self convetArray:object];
+		[self convetArray:object forClassName:@"JSONClass"];
 	} else if ([object isKindOfClass:[NSDictionary class]]) {
 		[self convetObject:object forClassName:@"JSONObject"];
 	}
@@ -51,25 +51,29 @@
 
 			subClassName = [NSString stringWithFormat:@"strong) %@ *", [self capitalizedFirstLetter:key]];
 		} else if ([object isKindOfClass:[NSArray class]]) {
-			[self convetArray:object];
+			[self convetArray:object forClassName:[NSString stringWithFormat:@"%@", key]];
 		}
 
 		[propertys appendString:[NSString stringWithFormat:@"@property (nonatomic, %@%@;\n", subClassName, key]];
 	}
 
 	className = [self capitalizedFirstLetter:className];
-	self.afterTextView.string = [self.afterTextView.string stringByAppendingString:[NSString stringWithFormat:@"#pragma mark - %@\n\n@interface %@ : NSObject\n\n%@\n@end\n\n", className, className, propertys]];
+
+	NSString *newClass = [NSString stringWithFormat:@"#pragma mark - %@\n\n@interface %@ : NSObject\n\n%@\n@end\n\n", className, className, propertys];
+	if (![self.afterTextView.string containsString:newClass]) {
+		self.afterTextView.string = [self.afterTextView.string stringByAppendingString:newClass];
+	}
 }
 
-- (void)convetArray:(NSArray *)jsonArray {
+- (void)convetArray:(NSArray *)jsonArray forClassName:(NSString *)className {
 	for (id object in jsonArray) {
 		if ([object isKindOfClass:[NSDictionary class]]) {
-			[self convetObject:object forClassName:[NSString stringWithFormat:@"Class_%@", @(arc4random())]];
+			[self convetObject:object forClassName:className];
 		} else if ([object isKindOfClass:[NSArray class]]) {
-			[self convetArray:jsonArray];
+			[self convetArray:jsonArray forClassName:className];
 		}
-
-		break;
+        
+        break;
 	}
 }
 
