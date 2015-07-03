@@ -11,12 +11,16 @@
 #import <Mantle.h>
 #import <Masonry.h>
 #import <EXTScope.h>
+
 #import "KSJSONKit.h"
+#import "KSItemInfoModel.h"
 
 @interface ViewController ()
 
 @property (unsafe_unretained) IBOutlet NSTextView *beforeTextView;
 @property (unsafe_unretained) IBOutlet NSTextView *afterTextView;
+
+@property (nonatomic, strong) NSMutableString *implementaionString;
 
 @end
 
@@ -24,12 +28,25 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+
+	self.implementaionString = [[NSMutableString alloc] init];
+
+	NSString *itemInfoString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"item_info" ofType:@"json"] encoding:NSUTF8StringEncoding error:NULL];
+
+	NSError *error;
+	KSItemInfoModel *itemInfoModel = [MTLJSONAdapter modelOfClass:[KSItemInfoModel class] fromJSONDictionary:[itemInfoString ks_objectFromJSONString] error:&error];
+	if (error) {
+		NSLog(@"%@", error);
+	} else {
+		NSLog(@"%@", itemInfoModel);
+	}
 }
 
 - (IBAction)convetAction:(id)sender {
 	NSLog(@"%s", __func__);
 
 	self.afterTextView.string = @"";
+	[self.implementaionString setString:@""];
 
 	id object = [self.beforeTextView.string ks_objectFromJSONString];
 	if ([object isKindOfClass:[NSArray class]]) {
@@ -37,6 +54,9 @@
 	} else if ([object isKindOfClass:[NSDictionary class]]) {
 		[self convetObject:object forClassName:@"JSONObject"];
 	}
+
+	self.afterTextView.string = [self.afterTextView.string stringByAppendingString:@"// ----------- Separator Line  -----------\n\n"];
+	self.afterTextView.string = [self.afterTextView.string stringByAppendingString:self.implementaionString];
 }
 
 - (void)convetObject:(NSDictionary *)jsonObject forClassName:(NSString *)className {
@@ -59,9 +79,11 @@
 
 	className = [self capitalizedFirstLetter:className];
 
-	NSString *newClass = [NSString stringWithFormat:@"#pragma mark - %@\n\n@interface %@ : NSObject\n\n%@\n@end\n\n", className, className, propertys];
+	NSString *newClass = [NSString stringWithFormat:@"#pragma mark - %@\n\n@interface %@ : KSBaseModel\n\n%@\n@end\n\n", className, className, propertys];
 	if (![self.afterTextView.string containsString:newClass]) {
 		self.afterTextView.string = [self.afterTextView.string stringByAppendingString:newClass];
+
+		[self.implementaionString appendString:[NSString stringWithFormat:@"#pragma mark - %@\n\n@implementation %@\n\n@end\n\n", className, className]];
 	}
 }
 
@@ -72,8 +94,8 @@
 		} else if ([object isKindOfClass:[NSArray class]]) {
 			[self convetArray:jsonArray forClassName:className];
 		}
-        
-        break;
+
+		break;
 	}
 }
 

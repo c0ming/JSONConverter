@@ -1,0 +1,233 @@
+{
+	"api": "wdetail",
+	"v": "5.0",
+	"ret": ["SUCCESS::调用成功"],
+	"data": {
+		"apiStack": [{
+			"name": "esi",
+			"value": "{\"data\":{\"itemInfoModel\":{\"priceUnits\":[{\"name\":\"清新一夏\",\"price\":\"39.90\",\"display\":\"1\"},{\"name\":\"价格\",\"price\":\"61.80\",\"display\":\"3\"}],\"totalSoldQuantity\":\"430\",\"soldQuantityText\":\"月销 430笔\",\"quantity\":\"96663\",\"quantityText\":\"库存96663件\",\"points\":\"19\"},\"guaranteeInfo\":{\"afterGuarantees\":[{\"title\":\"极速退款\"},{\"title\":\"七天退换\"}]},\"delivery\":{\"destination\":\"广州\",\"deliveryFees\":[\"卖家包邮\"],\"areaId\":\"440100\",\"getAreaApi\":{\"name\":\"http\",\"value\":\"http://hws.m.taobao.com/cache/com.taobao.detail.getAllArea/1.0\"},\"updateAreaApi\":{\"name\":\"mtop\",\"value\":\"{\\\"API_NAME\\\":\\\"com.taobao.detail.getTmallDyn\\\",\\\"VERSION\\\":\\\"5.0\\\",\\\"exParams\\\":\\\"{\\\\\\\"id\\\\\\\":\\\\\\\"41558102071\\\\\\\"}\\\",\\\"itemNumId\\\":\\\"41558102071\\\",\\\"needEcode\\\":false,\\\"needLogin\\\":false,\\\"wua\\\":false}\"},\"success\":\"true\"},\"tips\":{\"lingquan\":[{\"txt\":\"点击领取优惠券\",\"logo\":\"http://gw.alicdn.com/tps/i2/T1LBSDFSVbXXXSaEYs-96-96.png\",\"url\":\"http://h5.m.taobao.com/present/hongbao.html?sellerId=1085244426\"}]},\"shopPromotion\":{\"title\":\"店铺优惠\",\"descriptions\":[\"满69元,享包邮\"],\"success\":\"true\"},\"itemControl\":{\"buyUrl\":\"buildOrderVersion=3.0\",\"unitControl\":{\"limitMultipleCount\":\"1\",\"cartSupport\":\"true\",\"buySupport\":\"true\",\"buyText\":\"立即购买\",\"cartText\":\"加入购物车\"},\"success\":\"true\"},\"layoutData\":{\"layoutId\":\"TB1wmXEIpXXXXXRXFXXhA1h2FXX\",\"data\":\"{    \\\"id\\\":\\\"tbal100\\\",    \\\"group\\\":\\\"taobao\\\",    \\\"header\\\":{        \\\"id\\\":\\\"tbah100\\\",        \\\"type\\\":\\\"native\\\",        \\\"name\\\":\\\"actionbar\\\",        \\\"version\\\":\\\"1.0.0\\\",        \\\"style\\\":\\\"floating\\\",        \\\"menu_items\\\":[        ],    },    \\\"components\\\":{        \\\"type\\\":\\\"linear\\\",        \\\"orientation\\\":\\\"vertical\\\",        \\\"list\\\":[        {            \\\"id\\\":\\\"tbac100\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"gallery\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac101\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"title\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac102\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"divider\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac103\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"price\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac104\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"subinfo\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac110\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"ebook\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac105\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"divider2\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac106\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"promotion\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac111\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"coupon\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac112\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"sku\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac113\\\",            \\\"type\\\":\\\"weapp\\\",            \\\"name\\\":\\\"o2o\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac114\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"banner\\\",            \\\"version\\\":\\\"1.0.0\\\",            \\\"tag\\\":\\\"3\\\",        },        {            \\\"id\\\":\\\"tbac107\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"comment\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac108\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"seller\\\",            \\\"version\\\":\\\"1.0.0\\\",            \\\"url\\\":\\\"http://shop.m.taobao.com/shop/shop_index.htm\\\",            \\\"url_params\\\":{ \\\"shop_id\\\":\\\"\\\", },            \\\"track_name\\\":\\\"Shop\\\",            \\\"track_params\\\":{            \\\"item_id\\\":\\\"\\\",            \\\"shop_id\\\":\\\"\\\",             },        },        {           \\\"id\\\":\\\"tbac108_info\\\",           \\\"type\\\":\\\"native\\\",           \\\"name\\\":\\\"shop_info\\\",           \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac108_bottom\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"seller_bottom\\\",            \\\"version\\\":\\\"1.0.0\\\",            \\\"widgets\\\":[              {              \\\"title\\\":\\\"\\\\ua15a  查看宝贝分类\\\",              \\\"title_size\\\":\\\"14\\\",              \\\"url\\\":\\\"http://shop.m.taobao.com/category/index.htm\\\",              \\\"url_params\\\":{              \\\"shop_id\\\":\\\"\\\",},              \\\"track_name\\\":\\\"ShopNav\\\",              \\\"track_params\\\":{                \\\"item_id\\\":\\\"\\\",                \\\"shop_id\\\":\\\"\\\",},               },              {             \\\"title\\\":\\\"\\\\uc08a  进店逛逛\\\",             \\\"title_size\\\":\\\"14\\\",             \\\"url\\\":\\\"http://shop.m.taobao.com/shop/shop_index.htm\\\",             \\\"url_params\\\":{             \\\"shop_id\\\":\\\"\\\", },             \\\"track_name\\\":\\\"Shop\\\",             \\\"track_params\\\":{               \\\"item_id\\\":\\\"\\\",               \\\"shop_id\\\":\\\"\\\", },             },             ],        },        {            \\\"id\\\":\\\"tbac115\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"banner\\\",            \\\"tag\\\":\\\"4\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac116\\\",            \\\"type\\\":\\\"weapp\\\",            \\\"name\\\":\\\"combo\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        {            \\\"id\\\":\\\"tbac109\\\",            \\\"type\\\":\\\"native\\\",            \\\"name\\\":\\\"fulldesc_tips\\\",            \\\"version\\\":\\\"1.0.0\\\",        },        ],    },    \\\"bottom\\\":{        \\\"id\\\":\\\"tbab100\\\",        \\\"type\\\":\\\"native\\\",        \\\"name\\\":\\\"bottombar\\\",        \\\"version\\\":\\\"1.0.0\\\",    }}\"},\"abTestInfo\":{\"SingleWebview\":\"true\"},\"extras\":{\"queryParams\":{\"longitude\":\"113.397172\",\"latitude\":\"23.124141\"}},\"subInfos\":[\"快递 0.00元\",\"月销 430笔\",\"广东珠海\"]},\"success\":\"true\",\"platform\":\"true\",\"api\":\"com.taobao.detail.getTmallDyn\",\"v\":\"5.0\",\"ret\":[\"SUCCESS::调用成功\"]}"
+		}],
+		"itemInfoModel": {
+			"itemId": "41558102071",
+			"title": "【元朗】蝴蝶酥 进口天然奶油千层酥纯手工饼干点心 160gX3盒包邮",
+			"picsPath": ["http://gw.alicdn.com/bao/uploaded/i4/TB1JXB_HpXXXXc4XXXXXXXXXXXX_!!0-item_pic.jpg", "http://gw.alicdn.com/bao/uploaded/i1/1085244426/TB2PRRxbpXXXXamXpXXXXXXXXXX_!!1085244426.jpg", "http://gw.alicdn.com/bao/uploaded/i3/1085244426/TB2H7xBbpXXXXc9XXXXXXXXXXXX_!!1085244426.jpg", "http://gw.alicdn.com/bao/uploaded/i1/1085244426/TB2G.2TaFXXXXX3XpXXXXXXXXXX_!!1085244426.jpg", "http://gw.alicdn.com/bao/uploaded/i2/1085244426/TB2IQWdcXXXXXa2XXXXXXXXXXXX_!!1085244426.jpg"],
+			"favcount": "1248",
+			"stuffStatus": "全新",
+			"itemUrl": "http://a.m.tmall.com/i41558102071.htm",
+			"sku": false,
+			"location": "广东珠海",
+			"saleLine": "online",
+			"categoryId": "50010511",
+			"itemTypeName": "tmall",
+			"itemTypeLogo": "http://gw.alicdn.com/tps/i1/T1AV5DFSRbXXbaUxfe-36-32.png",
+			"itemIcon": "http://gw.alicdn.com/tps/i1/T1AV5DFSRbXXbaUxfe-36-32.png"
+		},
+		"seller": {
+			"userNumId": "1085244426",
+			"type": "B",
+			"nick": "元朗食品旗舰店",
+			"creditLevel": "13",
+			"goodRatePercentage": "100.00%",
+			"shopTitle": "元朗食品旗舰店",
+			"shopId": "101071345",
+			"weitaoId": "2049652964",
+			"fansCount": "24131",
+			"fansCountText": "2.4万",
+			"evaluateInfo": [{
+				"title": "发货速度",
+				"score": "4.8 ",
+				"highGap": "23.99"
+			}, {
+				"title": "服务态度",
+				"score": "4.8 ",
+				"highGap": "20.75"
+			}, {
+				"title": "描述相符",
+				"score": "4.8 ",
+				"highGap": "15.18"
+			}],
+			"picUrl": "http://gw.alicdn.com/bao/uploaded//09/55/T1WSgmXaleXXb1upjX.jpg",
+			"starts": "2012-11-16 17:58:32",
+			"shopPromtionType": "2",
+			"actionUnits": [{
+				"name": "全部宝贝",
+				"value": "53",
+				"url": "http://shop.m.taobao.com/goods/index.htm?shop_id=101071345",
+				"track": "Button-AllItem"
+			}, {
+				"name": "上新",
+				"value": "3",
+				"url": "http://h5.m.taobao.com/weapp/view_page.htm?page=shop/new_item_list&userId=1085244426",
+				"track": "Button-NewItem"
+			}, {
+				"name": "关注人数",
+				"value": "2.4万"
+			}]
+		},
+		"props": [{
+			"name": "生产许可证编号",
+			"value": "440408010014"
+		}, {
+			"name": "产品标准号",
+			"value": "GB/T 20980"
+		}, {
+			"name": "厂名",
+			"value": "珠海元朗食品有限公司"
+		}, {
+			"name": "厂址",
+			"value": "珠海市高新区金鼎科技工业园30号"
+		}, {
+			"name": "厂家联系方式",
+			"value": "86-756-3399685"
+		}, {
+			"name": "配料表",
+			"value": "鸡蛋、奶粉、小麦粉、白砂糖、食用盐、食用植物油、食用牛油、食品添加剂、食用香精"
+		}, {
+			"name": "储藏方法",
+			"value": "请密封存储并置于阴凉干燥处，开封后请立即食用"
+		}, {
+			"name": "保质期",
+			"value": "365"
+		}, {
+			"name": "食品添加剂",
+			"value": "含"
+		}, {
+			"name": "净含量",
+			"value": "480g"
+		}, {
+			"name": "包装方式",
+			"value": "包装"
+		}, {
+			"name": "商品条形码",
+			"value": "6931412525314"
+		}, {
+			"name": "糕点种类",
+			"value": "酥性饼干"
+		}, {
+			"name": "品牌",
+			"value": "元朗"
+		}, {
+			"name": "系列",
+			"value": "蝴蝶酥 160gX3"
+		}, {
+			"name": "热销系列",
+			"value": "千层饼"
+		}, {
+			"name": "是否含糖",
+			"value": "含糖"
+		}, {
+			"name": "产地",
+			"value": "中国大陆"
+		}, {
+			"name": "省份",
+			"value": "广东省"
+		}],
+		"descInfo": {
+			"briefDescUrl": "http://hws.m.taobao.com/cache/mtop.wdetail.getItemDescx/4.1/?data=%7B%22item_num_id%22%3A%2241558102071%22%7D",
+			"fullDescUrl": "http://hws.m.taobao.com/cache/mtop.wdetail.getItemFullDesc/4.1/?data=%7B%22item_num_id%22%3A%2241558102071%22%7D",
+			"showFullDetailDesc": "2",
+			"pcDescUrl": "http://hws.m.taobao.com/cache/wdesc/5.0?id=41558102071&f=TB1n6.WIpXXXXaZXpXX8qtpFXXX",
+			"h5DescUrl": "http://hws.m.taobao.com/cache/mdesc/5.0?id=41558102071&f=TB102ERIpXXXXcYXpXX8qtpFXXX",
+			"h5DescUrl2": "http://h5.m.taobao.com/app/detail/desc.html?_isH5Des=true#!id=41558102071&type=0&f=TB102ERIpXXXXcYXpXX8qtpFXXX"
+		},
+		"rateInfo": {
+			"rateCounts": "849",
+			"rateDetailList": [{
+				"nick": "杨**0",
+				"headPic": "http://assets.alicdn.com/app/sns/img/default/avatar-80.png",
+				"star": "2",
+				"feedback": "味道不错，跟超市里买的一，以后还会买"
+			}, {
+				"nick": "想**尾",
+				"headPic": "http://assets.alicdn.com/app/sns/img/default/avatar-80.png",
+				"star": "7",
+				"feedback": "一点都不甜。只是酥。口感一般"
+			}, {
+				"nick": "t**3",
+				"headPic": "http://assets.alicdn.com/app/sns/img/default/avatar-80.png",
+				"star": "3",
+				"feedback": "东西还行吧，价格不低呦。"
+			}, {
+				"nick": "t**9",
+				"headPic": "http://assets.alicdn.com/app/sns/img/default/avatar-80.png",
+				"star": "2",
+				"feedback": "很喜欢蝴蝶酥，一连吃了好几包，下次会继续来"
+			}, {
+				"nick": "a**i",
+				"headPic": "http://assets.alicdn.com/app/sns/img/default/avatar-80.png",
+				"star": "6",
+				"feedback": "送的蛋卷，有一包是皮的，包装完好，说明是包装之前就是皮的，很担心，是不是以前的货重新包装的。"
+			}],
+			"tagList": [{
+				"attribute": "3337|1",
+				"title": "味道不错",
+				"count": "77",
+				"score": "1"
+			}, {
+				"attribute": "220|1",
+				"title": "包装挺好",
+				"count": "74",
+				"score": "1"
+			}, {
+				"attribute": "2437|1",
+				"title": "口感不错",
+				"count": "54",
+				"score": "1"
+			}, {
+				"attribute": "420|1",
+				"title": "快递不错",
+				"count": "48",
+				"score": "1"
+			}, {
+				"attribute": "620|1",
+				"title": "质量不错",
+				"count": "35",
+				"score": "1"
+			}, {
+				"attribute": "3737|-1",
+				"title": "个头小",
+				"count": "10",
+				"score": "-1"
+			}]
+		},
+		"comboInfo": {
+			"asynUrl": {
+				"name": "mtop",
+				"value": "{\"API_NAME\":\"com.taobao.detail.getTmallCombo\",\"VERSION\":\"1.0\",\"needEcode\":false,\"needLogin\":false,\"params\":{\"itemId\":\"41558102071\",\"sellerId\":\"1085244426\"}}"
+			},
+			"h5Url": {
+				"name": "http",
+				"value": "http://h5.m.taobao.com/detailplugin/mix.html?itemId=41558102071&sellerId=1085244426&type=tmall"
+			}
+		},
+		"layoutData": {
+			"replaceDataMap": {
+				"SELLER_ID": "1085244426",
+				"SHOP_ID": "101071345",
+				"ITEM_ID": "41558102071"
+			}
+		},
+		"weappList": [{
+			"identifier": "wapComboId01",
+			"mtopModel": {
+				"API_NAME": "com.taobao.detail.getTmallCombo",
+				"VERSION": "1.0",
+				"params": {
+					"itemId": "41558102071",
+					"sellerId": "1085244426",
+					"jumpUrl": "http://h5.m.taobao.com/detailplugin/mix.html?itemId=41558102071&sellerId=1085244426&type=tmall"
+				},
+				"needLogin": false,
+				"needEcode": false
+			}
+		}],
+		"trackParams": {
+			"BC_type": "B",
+			"categoryId": "50010511",
+			"brandId": "119065"
+		},
+		"extras": {
+			"defDyn": "{\"delivery\":{\"deliveryFees\":[\"卖家包邮\"]},\"itemControl\":{\"buyUrl\":\"buildOrderVersion=3.0\",\"unitControl\":{\"buySupport\":true,\"buyText\":\"立即购买\",\"cartSupport\":true,\"cartText\":\"加入购物车\",\"limitMultipleCount\":1,\"submitText\":\"立即购买\"}},\"itemInfoModel\":{\"priceUnits\":[{\"display\":2,\"price\":\"61.80\"}],\"quantity\":96663,\"quantityText\":\"96663\"}}"
+		}
+	}
+}
