@@ -1,0 +1,20 @@
+PODS:
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - Mantle (2.0.2):
+    - Mantle/extobjc (= 2.0.2)
+  - Mantle/extobjc (2.0.2)
+  - Masonry (0.6.1)
+
+DEPENDENCIES:
+  - libextobjc/EXTScope
+  - Mantle
+  - Masonry
+
+SPEC CHECKSUMS:
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+
+COCOAPODS: 0.37.1

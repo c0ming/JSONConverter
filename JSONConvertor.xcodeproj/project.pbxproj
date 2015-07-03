@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E448392C754DEB7F08E4F4B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 777AE373B536389EBF89A60F /* libPods.a */; };
 		A9A431DF1B468731006D11BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A431DE1B468731006D11BC /* AppDelegate.m */; };
 		A9A431E11B468731006D11BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A431E01B468731006D11BC /* main.m */; };
-		A9A431E41B468731006D11BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A431E31B468731006D11BC /* ViewController.m */; };
 		A9A431E61B468731006D11BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A431E51B468731006D11BC /* Images.xcassets */; };
 		A9A431E91B468731006D11BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9A431E71B468731006D11BC /* Main.storyboard */; };
 		A9A431F51B468732006D11BC /* JSONConvertorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A431F41B468732006D11BC /* JSONConvertorTests.m */; };
+		A9A432001B468967006D11BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A431FF1B468967006D11BC /* ViewController.m */; };
+		A9A432031B4689FA006D11BC /* KSJSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A432021B4689FA006D11BC /* KSJSONKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,18 +28,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24A60291353E9315A7B8E088 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6DA22D122235F9AC81F5E192 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		777AE373B536389EBF89A60F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A431D81B468731006D11BC /* JSONConvertor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONConvertor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A431DC1B468731006D11BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9A431DD1B468731006D11BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A9A431DE1B468731006D11BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A9A431E01B468731006D11BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A9A431E21B468731006D11BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A9A431E31B468731006D11BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A9A431E51B468731006D11BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A9A431E81B468731006D11BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9A431EE1B468732006D11BC /* JSONConvertorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONConvertorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A431F31B468732006D11BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9A431F41B468732006D11BC /* JSONConvertorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONConvertorTests.m; sourceTree = "<group>"; };
+		A9A431FE1B468967006D11BC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A9A431FF1B468967006D11BC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A9A432011B4689FA006D11BC /* KSJSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSJSONKit.h; sourceTree = "<group>"; };
+		A9A432021B4689FA006D11BC /* KSJSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSJSONKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E448392C754DEB7F08E4F4B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +66,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3166DA8110F619AAD32F4220 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DA22D122235F9AC81F5E192 /* Pods.debug.xcconfig */,
+				24A60291353E9315A7B8E088 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A216DE84BC4F607E2E25CACE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				777AE373B536389EBF89A60F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9A431CF1B468731006D11BC = {
 			isa = PBXGroup;
 			children = (
 				A9A431DA1B468731006D11BC /* JSONConvertor */,
 				A9A431F11B468732006D11BC /* JSONConvertorTests */,
 				A9A431D91B468731006D11BC /* Products */,
+				3166DA8110F619AAD32F4220 /* Pods */,
+				A216DE84BC4F607E2E25CACE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,10 +106,11 @@
 		A9A431DA1B468731006D11BC /* JSONConvertor */ = {
 			isa = PBXGroup;
 			children = (
+				A9A432041B468A00006D11BC /* JSONKit */,
 				A9A431DD1B468731006D11BC /* AppDelegate.h */,
 				A9A431DE1B468731006D11BC /* AppDelegate.m */,
-				A9A431E21B468731006D11BC /* ViewController.h */,
-				A9A431E31B468731006D11BC /* ViewController.m */,
+				A9A431FE1B468967006D11BC /* ViewController.h */,
+				A9A431FF1B468967006D11BC /* ViewController.m */,
 				A9A431E51B468731006D11BC /* Images.xcassets */,
 				A9A431E71B468731006D11BC /* Main.storyboard */,
 				A9A431DB1B468731006D11BC /* Supporting Files */,
@@ -116,6 +144,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A9A432041B468A00006D11BC /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				A9A432011B4689FA006D11BC /* KSJSONKit.h */,
+				A9A432021B4689FA006D11BC /* KSJSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9A431F81B468732006D11BC /* Build configuration list for PBXNativeTarget "JSONConvertor" */;
 			buildPhases = (
+				A785172BE6F1FCEDBA497C28 /* Check Pods Manifest.lock */,
 				A9A431D41B468731006D11BC /* Sources */,
 				A9A431D51B468731006D11BC /* Frameworks */,
 				A9A431D61B468731006D11BC /* Resources */,
+				67340F2B082FDF2CE77F5252 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,13 +249,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		67340F2B082FDF2CE77F5252 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A785172BE6F1FCEDBA497C28 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A9A431D41B468731006D11BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9A431E41B468731006D11BC /* ViewController.m in Sources */,
+				A9A432001B468967006D11BC /* ViewController.m in Sources */,
 				A9A431E11B468731006D11BC /* main.m in Sources */,
+				A9A432031B4689FA006D11BC /* KSJSONKit.m in Sources */,
 				A9A431DF1B468731006D11BC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +405,7 @@
 		};
 		A9A431F91B468732006D11BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DA22D122235F9AC81F5E192 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -343,6 +417,7 @@
 		};
 		A9A431FA1B468732006D11BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24A60291353E9315A7B8E088 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -407,6 +482,7 @@
 				A9A431FA1B468732006D11BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9A431FB1B468732006D11BC /* Build configuration list for PBXNativeTarget "JSONConvertorTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +491,7 @@
 				A9A431FD1B468732006D11BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
