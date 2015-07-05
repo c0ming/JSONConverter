@@ -26,12 +26,33 @@
 
 @implementation ViewController
 
+#pragma mark - Actions
+
+- (IBAction)convetAction:(id)sender {
+	NSLog(@"%s", __func__);
+
+	self.afterTextView.string = @"// ------------ Interface ------------ \n\n";
+	[self.implementaionString setString:@""];
+
+	id object = [self.beforeTextView.string ks_objectFromJSONString];
+	if ([object isKindOfClass:[NSArray class]]) {
+		[self convetArray:object forClassName:@"RootClass"];
+	} else if ([object isKindOfClass:[NSDictionary class]]) {
+		[self convetObject:object forClassName:@"RootClass"];
+	}
+
+	self.afterTextView.string = [self.afterTextView.string stringByAppendingString:@"// ------------ Implementation ------------ \n\n"];
+	self.afterTextView.string = [self.afterTextView.string stringByAppendingString:self.implementaionString];
+}
+
+#pragma mark -
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
 	self.implementaionString = [[NSMutableString alloc] init];
 
-	// Demo
+	// demo
 	NSString *itemInfoString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"item_info" ofType:@"json"] encoding:NSUTF8StringEncoding error:NULL];
 
 	NSError *error;
@@ -43,22 +64,7 @@
 	}
 }
 
-- (IBAction)convetAction:(id)sender {
-	NSLog(@"%s", __func__);
-
-	self.afterTextView.string = @"";
-	[self.implementaionString setString:@""];
-
-	id object = [self.beforeTextView.string ks_objectFromJSONString];
-	if ([object isKindOfClass:[NSArray class]]) {
-		[self convetArray:object forClassName:@"JSONClass"];
-	} else if ([object isKindOfClass:[NSDictionary class]]) {
-		[self convetObject:object forClassName:@"JSONObject"];
-	}
-
-	self.afterTextView.string = [self.afterTextView.string stringByAppendingString:@"// ----------- Separator Line  -----------\n\n"];
-	self.afterTextView.string = [self.afterTextView.string stringByAppendingString:self.implementaionString];
-}
+#pragma mark - Convert Methods
 
 - (void)convetObject:(NSDictionary *)jsonObject forClassName:(NSString *)className {
 	className = [self capitalizedFirstLetter:className];
@@ -93,8 +99,6 @@
 		self.afterTextView.string = [self.afterTextView.string stringByAppendingString:newClass];
 
 		[self.implementaionString appendString:[NSString stringWithFormat:@"#pragma mark - %@\n\n@implementation %@\n\n%@@end\n\n", className, className, transformers]];
-
-		NSLog(@"---%@", transformers);
 	}
 }
 
@@ -106,6 +110,7 @@
 			[self convetArray:jsonArray forClassName:className];
 		}
 
+		// assume the element in array is same
 		break;
 	}
 }
@@ -135,6 +140,8 @@
 	}
 	return string;
 }
+
+#pragma mark -
 
 - (void)setRepresentedObject:(id)representedObject {
 	[super setRepresentedObject:representedObject];
