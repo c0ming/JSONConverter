@@ -20,18 +20,26 @@
 @property (unsafe_unretained) IBOutlet NSTextView *beforeTextView;
 @property (unsafe_unretained) IBOutlet NSTextView *afterTextView;
 
+@property (nonatomic, strong) NSMutableString *interfaceString;
 @property (nonatomic, strong) NSMutableString *implementaionString;
 
 @end
 
 @implementation ViewController
 
+#pragma mark - Setup
+
+- (void)setup {
+	self.interfaceString = [[NSMutableString alloc] init];
+	self.implementaionString = [[NSMutableString alloc] init];
+}
+
 #pragma mark - Actions
 
 - (IBAction)convetAction:(id)sender {
 	NSLog(@"%s", __func__);
 
-	self.afterTextView.string = @"// ------------ Interface ------------ \n\n";
+	[self.interfaceString setString:@""];
 	[self.implementaionString setString:@""];
 
 	id object = [self.beforeTextView.string ks_objectFromJSONString];
@@ -41,8 +49,13 @@
 		[self convetObject:object forClassName:@"RootClass"];
 	}
 
-	self.afterTextView.string = [self.afterTextView.string stringByAppendingString:@"// ------------ Implementation ------------ \n\n"];
-	self.afterTextView.string = [self.afterTextView.string stringByAppendingString:self.implementaionString];
+	NSMutableString *resultString = [NSMutableString string];
+	[resultString appendString:@"// ------------ Interface ------------ \n\n"];
+	[resultString appendString:self.interfaceString];
+	[resultString appendString:@"// ------------ Implementation ------------ \n\n"];
+	[resultString appendString:self.implementaionString];
+
+	self.afterTextView.string = resultString;
 }
 
 #pragma mark -
@@ -50,18 +63,18 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
-	self.implementaionString = [[NSMutableString alloc] init];
+	[self setup];
 
 	// demo
-	NSString *itemInfoString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"item_info" ofType:@"json"] encoding:NSUTF8StringEncoding error:NULL];
-
-	NSError *error;
-	KSItemInfoModel *itemInfoModel = [MTLJSONAdapter modelOfClass:[KSItemInfoModel class] fromJSONDictionary:[itemInfoString ks_objectFromJSONString] error:&error];
-	if (error) {
-		NSLog(@"%@", error);
-	} else {
-		NSLog(@"%@", itemInfoModel.data);
-	}
+//	NSString *itemInfoString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"item_info" ofType:@"json"] encoding:NSUTF8StringEncoding error:NULL];
+//
+//	NSError *error;
+//	KSItemInfoModel *itemInfoModel = [MTLJSONAdapter modelOfClass:[KSItemInfoModel class] fromJSONDictionary:[itemInfoString ks_objectFromJSONString] error:&error];
+//	if (error) {
+//		NSLog(@"%@", error);
+//	} else {
+//		NSLog(@"%@", itemInfoModel.data);
+//	}
 }
 
 #pragma mark - Convert Methods
@@ -94,10 +107,9 @@
 		[propertys appendString:[NSString stringWithFormat:@"@property (nonatomic, %@%@;\n", subClassName, key]];
 	}
 
-	NSString *newClass = [NSString stringWithFormat:@"#pragma mark - %@\n\n@interface %@ : KSBaseModel\n\n%@\n@end\n\n", className, className, propertys];
-	if (![self.afterTextView.string containsString:newClass]) {
-		self.afterTextView.string = [self.afterTextView.string stringByAppendingString:newClass];
-
+	NSString *newInterface = [NSString stringWithFormat:@"#pragma mark - %@\n\n@interface %@ : KSBaseModel\n\n%@\n@end\n\n", className, className, propertys];
+	if (![self.interfaceString containsString:newInterface]) {
+		[self.interfaceString appendString:newInterface];
 		[self.implementaionString appendString:[NSString stringWithFormat:@"#pragma mark - %@\n\n@implementation %@\n\n%@@end\n\n", className, className, transformers]];
 	}
 }
