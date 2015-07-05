@@ -66,15 +66,15 @@
 	[self setup];
 
 	// demo
-//	NSString *itemInfoString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"item_info" ofType:@"json"] encoding:NSUTF8StringEncoding error:NULL];
-//
-//	NSError *error;
-//	KSItemInfoModel *itemInfoModel = [MTLJSONAdapter modelOfClass:[KSItemInfoModel class] fromJSONDictionary:[itemInfoString ks_objectFromJSONString] error:&error];
-//	if (error) {
-//		NSLog(@"%@", error);
-//	} else {
-//		NSLog(@"%@", itemInfoModel.data);
-//	}
+	NSString *itemInfoString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"item_info" ofType:@"json"] encoding:NSUTF8StringEncoding error:NULL];
+
+	NSError *error;
+	KSItemInfoModel *itemInfoModel = [MTLJSONAdapter modelOfClass:[KSItemInfoModel class] fromJSONDictionary:[itemInfoString ks_objectFromJSONString] error:&error];
+	if (error) {
+		NSLog(@"%@", error);
+	} else {
+		NSLog(@"%@", [itemInfoModel.data.props[0] valueForKey:@"name"]);
+	}
 }
 
 #pragma mark - Convert Methods
@@ -94,13 +94,13 @@
 
 			subClassName = [NSString stringWithFormat:@"strong) %@ *", [self capitalizedFirstLetter:key]];
 
-			[transformers appendFormat:@"+ (NSValueTransformer *)%@JSONTransformer {\n\treturn [MTLJSONAdapter dictionaryTransformerWithModelClass:[%@ class]];\n}\n\n", [self capitalizedFirstLetter:key], [self capitalizedFirstLetter:key]];
+			[transformers appendFormat:@"+ (NSValueTransformer *)%@JSONTransformer {\n\treturn [MTLJSONAdapter dictionaryTransformerWithModelClass:[%@ class]];\n}\n\n", key, [self capitalizedFirstLetter:key]];
 		} else if ([object isKindOfClass:[NSArray class]]) {
 			[self convetArray:object forClassName:[NSString stringWithFormat:@"%@", key]];
 
 			// if element in the array is object
 			if ([object[0] isKindOfClass:[NSDictionary class]]) {
-				[transformers appendFormat:@"+ (NSValueTransformer *)%@JSONTransformer {\n\treturn [MTLJSONAdapter arrayTransformerWithModelClass:[%@ class]];\n}\n\n", [self capitalizedFirstLetter:key], [self capitalizedFirstLetter:key]];
+				[transformers appendFormat:@"+ (NSValueTransformer *)%@JSONTransformer {\n\treturn [MTLJSONAdapter arrayTransformerWithModelClass:[%@ class]];\n}\n\n", key, [self capitalizedFirstLetter:key]];
 			}
 		}
 

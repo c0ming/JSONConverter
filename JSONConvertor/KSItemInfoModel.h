@@ -8,6 +8,8 @@
 
 #import "KSBaseModel.h"
 
+// ------------ Interface ------------
+
 #pragma mark - EvaluateInfo
 
 @interface EvaluateInfo : KSBaseModel

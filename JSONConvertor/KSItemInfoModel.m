@@ -8,7 +8,7 @@
 
 #import "KSItemInfoModel.h"
 
-// ----------- Separator Line  -----------
+// ------------ Implementation ------------
 
 #pragma mark - EvaluateInfo
 
@@ -26,11 +26,11 @@
 
 @implementation Seller
 
-+ (NSValueTransformer *)EvaluateInfoJSONTransformer {
++ (NSValueTransformer *)evaluateInfoJSONTransformer {
 	return [MTLJSONAdapter arrayTransformerWithModelClass:[EvaluateInfo class]];
 }
 
-+ (NSValueTransformer *)ActionUnitsJSONTransformer {
++ (NSValueTransformer *)actionUnitsJSONTransformer {
 	return [MTLJSONAdapter arrayTransformerWithModelClass:[ActionUnits class]];
 }
 
@@ -70,11 +70,11 @@
 
 @implementation ComboInfo
 
-+ (NSValueTransformer *)AsynUrlJSONTransformer {
++ (NSValueTransformer *)asynUrlJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[AsynUrl class]];
 }
 
-+ (NSValueTransformer *)H5UrlJSONTransformer {
++ (NSValueTransformer *)h5UrlJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[H5Url class]];
 }
 
@@ -102,11 +102,11 @@
 
 @implementation RateInfo
 
-+ (NSValueTransformer *)TagListJSONTransformer {
++ (NSValueTransformer *)tagListJSONTransformer {
 	return [MTLJSONAdapter arrayTransformerWithModelClass:[TagList class]];
 }
 
-+ (NSValueTransformer *)RateDetailListJSONTransformer {
++ (NSValueTransformer *)rateDetailListJSONTransformer {
 	return [MTLJSONAdapter arrayTransformerWithModelClass:[RateDetailList class]];
 }
 
@@ -122,7 +122,7 @@
 
 @implementation LayoutData
 
-+ (NSValueTransformer *)ReplaceDataMapJSONTransformer {
++ (NSValueTransformer *)replaceDataMapJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[ReplaceDataMap class]];
 }
 
@@ -144,7 +144,7 @@
 
 @implementation MtopModel
 
-+ (NSValueTransformer *)ParamsJSONTransformer {
++ (NSValueTransformer *)paramsJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Params class]];
 }
 
@@ -154,7 +154,7 @@
 
 @implementation WeappList
 
-+ (NSValueTransformer *)MtopModelJSONTransformer {
++ (NSValueTransformer *)mtopModelJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[MtopModel class]];
 }
 
@@ -170,47 +170,47 @@
 
 @implementation Data
 
-+ (NSValueTransformer *)SellerJSONTransformer {
++ (NSValueTransformer *)sellerJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Seller class]];
 }
 
-+ (NSValueTransformer *)ItemInfoModelJSONTransformer {
++ (NSValueTransformer *)itemInfoModelJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[ItemInfoModel class]];
 }
 
-+ (NSValueTransformer *)DescInfoJSONTransformer {
++ (NSValueTransformer *)descInfoJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[DescInfo class]];
 }
 
-+ (NSValueTransformer *)ExtrasJSONTransformer {
++ (NSValueTransformer *)extrasJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Extras class]];
 }
 
-+ (NSValueTransformer *)ComboInfoJSONTransformer {
++ (NSValueTransformer *)comboInfoJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[ComboInfo class]];
 }
 
-+ (NSValueTransformer *)ApiStackJSONTransformer {
++ (NSValueTransformer *)apiStackJSONTransformer {
 	return [MTLJSONAdapter arrayTransformerWithModelClass:[ApiStack class]];
 }
 
-+ (NSValueTransformer *)RateInfoJSONTransformer {
++ (NSValueTransformer *)rateInfoJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[RateInfo class]];
 }
 
-+ (NSValueTransformer *)LayoutDataJSONTransformer {
++ (NSValueTransformer *)layoutDataJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[LayoutData class]];
 }
 
-+ (NSValueTransformer *)TrackParamsJSONTransformer {
++ (NSValueTransformer *)trackParamsJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[TrackParams class]];
 }
 
-+ (NSValueTransformer *)WeappListJSONTransformer {
++ (NSValueTransformer *)weappListJSONTransformer {
 	return [MTLJSONAdapter arrayTransformerWithModelClass:[WeappList class]];
 }
 
-+ (NSValueTransformer *)PropsJSONTransformer {
++ (NSValueTransformer *)propsJSONTransformer {
 	return [MTLJSONAdapter arrayTransformerWithModelClass:[Props class]];
 }
 
@@ -220,7 +220,7 @@
 
 @implementation KSItemInfoModel
 
-+ (NSValueTransformer *)DataJSONTransformer {
++ (NSValueTransformer *)dataJSONTransformer {
 	return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Data class]];
 }
 
