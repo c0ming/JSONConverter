@@ -94,7 +94,7 @@ Model Class for [Mantle](https://github.com/Mantle/Mantle):
 ```
 
 ###Practice
-* Create a [Base Class](./JSONConvertor/KSBaseModel.h)
+* Create a [Base Model](./JSONConvertor/KSBaseModel.h)
 * Properties Name in JSON String is Same in Generate Class.
 
 ###Not Support Now
