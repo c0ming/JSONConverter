@@ -73,7 +73,7 @@
 	if (error) {
 		NSLog(@"%@", error);
 	} else {
-		NSLog(@"%@", [itemInfoModel.data.props[0] valueForKey:@"name"]);
+		NSLog(@"%@", itemInfoModel.data.itemInfoModel.picsPath[0]);
 	}
 }
 
@@ -98,8 +98,9 @@
 		} else if ([object isKindOfClass:[NSArray class]]) {
 			[self convetArray:object forClassName:[NSString stringWithFormat:@"%@", key]];
 
+			NSArray *array = (NSArray *)object;
 			// if element in the array is object
-			if ([object[0] isKindOfClass:[NSDictionary class]]) {
+			if (array.count > 0 && [array[0] isKindOfClass:[NSDictionary class]]) {
 				[transformers appendFormat:@"+ (NSValueTransformer *)%@JSONTransformer {\n\treturn [MTLJSONAdapter arrayTransformerWithModelClass:[%@ class]];\n}\n\n", key, [self capitalizedFirstLetter:key]];
 			}
 		}
