@@ -15,11 +15,20 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+	[self.window setContentSize:NSMakeSize(960, 640)];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+	// Insert code here to tear down your application
+}
+
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
+	if (flag) {
+		return NO;
+	} else {
+		[self.window makeKeyAndOrderFront:self];
+		return YES;
+	}
 }
 
 @end

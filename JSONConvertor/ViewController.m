@@ -31,6 +31,7 @@
 
 	self.implementaionString = [[NSMutableString alloc] init];
 
+	// Demo
 	NSString *itemInfoString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"item_info" ofType:@"json"] encoding:NSUTF8StringEncoding error:NULL];
 
 	NSError *error;
@@ -38,7 +39,7 @@
 	if (error) {
 		NSLog(@"%@", error);
 	} else {
-		NSLog(@"%@", itemInfoModel);
+		NSLog(@"%@", itemInfoModel.data);
 	}
 }
 
@@ -60,7 +61,10 @@
 }
 
 - (void)convetObject:(NSDictionary *)jsonObject forClassName:(NSString *)className {
+	className = [self capitalizedFirstLetter:className];
+
 	NSMutableString *propertys = [NSMutableString string];
+	NSMutableString *transformers = [NSMutableString string];
 
 	for (NSString *key in jsonObject) {
 		id object = jsonObject[key];
@@ -70,20 +74,27 @@
 			[self convetObject:object forClassName:key];
 
 			subClassName = [NSString stringWithFormat:@"strong) %@ *", [self capitalizedFirstLetter:key]];
+
+			[transformers appendFormat:@"+ (NSValueTransformer *)%@JSONTransformer {\n\treturn [MTLJSONAdapter dictionaryTransformerWithModelClass:[%@ class]];\n}\n\n", [self capitalizedFirstLetter:key], [self capitalizedFirstLetter:key]];
 		} else if ([object isKindOfClass:[NSArray class]]) {
 			[self convetArray:object forClassName:[NSString stringWithFormat:@"%@", key]];
+
+			// if element in the array is object
+			if ([object[0] isKindOfClass:[NSDictionary class]]) {
+				[transformers appendFormat:@"+ (NSValueTransformer *)%@JSONTransformer {\n\treturn [MTLJSONAdapter arrayTransformerWithModelClass:[%@ class]];\n}\n\n", [self capitalizedFirstLetter:key], [self capitalizedFirstLetter:key]];
+			}
 		}
 
 		[propertys appendString:[NSString stringWithFormat:@"@property (nonatomic, %@%@;\n", subClassName, key]];
 	}
 
-	className = [self capitalizedFirstLetter:className];
-
 	NSString *newClass = [NSString stringWithFormat:@"#pragma mark - %@\n\n@interface %@ : KSBaseModel\n\n%@\n@end\n\n", className, className, propertys];
 	if (![self.afterTextView.string containsString:newClass]) {
 		self.afterTextView.string = [self.afterTextView.string stringByAppendingString:newClass];
 
-		[self.implementaionString appendString:[NSString stringWithFormat:@"#pragma mark - %@\n\n@implementation %@\n\n@end\n\n", className, className]];
+		[self.implementaionString appendString:[NSString stringWithFormat:@"#pragma mark - %@\n\n@implementation %@\n\n%@@end\n\n", className, className, transformers]];
+
+		NSLog(@"---%@", transformers);
 	}
 }
 

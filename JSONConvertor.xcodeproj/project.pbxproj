@@ -10,7 +10,8 @@
 		9E448392C754DEB7F08E4F4B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 777AE373B536389EBF89A60F /* libPods.a */; };
 		A91252661B474E9000322425 /* item_info.json in Resources */ = {isa = PBXBuildFile; fileRef = A91252651B474E9000322425 /* item_info.json */; };
 		A912526F1B4752ED00322425 /* KSBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A912526D1B4752ED00322425 /* KSBaseModel.m */; };
-		A91252721B47533600322425 /* KSItemInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A91252711B47533600322425 /* KSItemInfoModel.m */; };
+		A95AEBD41B48AFFB00436CF2 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95AEBD31B48AFFB00436CF2 /* WindowController.m */; };
+		A95AEBDA1B48CA5200436CF2 /* KSItemInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A95AEBD91B48CA5200436CF2 /* KSItemInfoModel.m */; };
 		A9A431DF1B468731006D11BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A431DE1B468731006D11BC /* AppDelegate.m */; };
 		A9A431E11B468731006D11BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A431E01B468731006D11BC /* main.m */; };
 		A9A431E61B468731006D11BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A431E51B468731006D11BC /* Images.xcassets */; };
@@ -37,8 +38,10 @@
 		A91252651B474E9000322425 /* item_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = item_info.json; sourceTree = "<group>"; };
 		A912526D1B4752ED00322425 /* KSBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSBaseModel.m; sourceTree = "<group>"; };
 		A912526E1B4752ED00322425 /* KSBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSBaseModel.h; sourceTree = "<group>"; };
-		A91252701B47533600322425 /* KSItemInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSItemInfoModel.h; sourceTree = "<group>"; };
-		A91252711B47533600322425 /* KSItemInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSItemInfoModel.m; sourceTree = "<group>"; };
+		A95AEBD21B48AFFB00436CF2 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
+		A95AEBD31B48AFFB00436CF2 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		A95AEBD81B48CA5200436CF2 /* KSItemInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSItemInfoModel.h; sourceTree = "<group>"; };
+		A95AEBD91B48CA5200436CF2 /* KSItemInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSItemInfoModel.m; sourceTree = "<group>"; };
 		A9A431D81B468731006D11BC /* JSONConvertor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONConvertor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A431DC1B468731006D11BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9A431DD1B468731006D11BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,8 +100,8 @@
 				A91252651B474E9000322425 /* item_info.json */,
 				A912526E1B4752ED00322425 /* KSBaseModel.h */,
 				A912526D1B4752ED00322425 /* KSBaseModel.m */,
-				A91252701B47533600322425 /* KSItemInfoModel.h */,
-				A91252711B47533600322425 /* KSItemInfoModel.m */,
+				A95AEBD81B48CA5200436CF2 /* KSItemInfoModel.h */,
+				A95AEBD91B48CA5200436CF2 /* KSItemInfoModel.m */,
 			);
 			name = Demo;
 			sourceTree = "<group>";
@@ -130,6 +133,8 @@
 				A91252731B4755EA00322425 /* Demo */,
 				A9A431DD1B468731006D11BC /* AppDelegate.h */,
 				A9A431DE1B468731006D11BC /* AppDelegate.m */,
+				A95AEBD21B48AFFB00436CF2 /* WindowController.h */,
+				A95AEBD31B48AFFB00436CF2 /* WindowController.m */,
 				A9A431FE1B468967006D11BC /* ViewController.h */,
 				A9A431FF1B468967006D11BC /* ViewController.m */,
 				A9A431E51B468731006D11BC /* Images.xcassets */,
@@ -310,10 +315,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9A432001B468967006D11BC /* ViewController.m in Sources */,
+				A95AEBD41B48AFFB00436CF2 /* WindowController.m in Sources */,
 				A9A431E11B468731006D11BC /* main.m in Sources */,
-				A91252721B47533600322425 /* KSItemInfoModel.m in Sources */,
 				A9A432031B4689FA006D11BC /* KSJSONKit.m in Sources */,
 				A9A431DF1B468731006D11BC /* AppDelegate.m in Sources */,
+				A95AEBDA1B48CA5200436CF2 /* KSItemInfoModel.m in Sources */,
 				A912526F1B4752ED00322425 /* KSBaseModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
