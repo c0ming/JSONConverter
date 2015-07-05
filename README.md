@@ -91,8 +91,11 @@ Model Class for [Mantle](https://github.com/Mantle/Mantle):
 }
 
 @end
-
 ```
+
+###Practice
+* Create a [Base Class](./JSONConvertor/KSBaseModel)
+* Properties Name in JSON String is Same in Generate Class.
 
 ###Not Support Now
 * 2D array
