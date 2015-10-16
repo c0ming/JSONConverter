@@ -14,4 +14,8 @@
 	return [NSDictionary mtl_identityPropertyMapWithModel:self];
 }
 
+- (void)setNilValueForKey:(NSString *)key {
+	[self setValue:@0 forKey:key];
+}
+
 @end

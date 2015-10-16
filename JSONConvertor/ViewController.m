@@ -52,7 +52,7 @@
 	NSMutableString *resultString = [NSMutableString string];
 	[resultString appendString:@"// ------------ Interface ------------ \n\n"];
 	[resultString appendString:self.interfaceString];
-	[resultString appendString:@"// ------------ Implementation ------------ \n\n"];
+	[resultString appendString:@"// ---------- Implementation --------- \n\n"];
 	[resultString appendString:self.implementaionString];
 
 	self.afterTextView.string = resultString;
@@ -88,11 +88,11 @@
 	for (NSString *key in jsonObject) {
 		id object = jsonObject[key];
 
-		NSString *subClassName = [self stringFromClass:[object class]];
+		NSString *property = [self propertyOfObject:object];
 		if ([object isKindOfClass:[NSDictionary class]]) {
 			[self convetObject:object forClassName:key];
 
-			subClassName = [NSString stringWithFormat:@"strong) %@ *", [self capitalizedFirstLetter:key]];
+			property = [NSString stringWithFormat:@"strong) %@ *", [self capitalizedFirstLetter:key]];
 
 			[transformers appendFormat:@"+ (NSValueTransformer *)%@JSONTransformer {\n\treturn [MTLJSONAdapter dictionaryTransformerWithModelClass:[%@ class]];\n}\n\n", key, [self capitalizedFirstLetter:key]];
 		} else if ([object isKindOfClass:[NSArray class]]) {
@@ -105,7 +105,7 @@
 			}
 		}
 
-		[propertys appendString:[NSString stringWithFormat:@"@property (nonatomic, %@%@;\n", subClassName, key]];
+		[propertys appendString:[NSString stringWithFormat:@"@property (nonatomic, %@%@;\n", property, key]];
 	}
 
 	NSString *newInterface = [NSString stringWithFormat:@"#pragma mark - %@\n\n@interface %@ : KSBaseModel\n\n%@\n@end\n\n", className, className, propertys];
@@ -132,19 +132,39 @@
 
 - (NSString *)stringFromClass:(Class)aClass {
 	NSString *className = [NSStringFromClass(aClass) lowercaseString];
+	NSLog(@">>> %@", className);
 	if ([className containsString:@"array"]) {
 		className = @"strong) NSArray *";
 	} else if ([className containsString:@"number"]) {
 		className = @"strong) NSNumber *";
 	} else if ([className containsString:@"boolean"]) {
 		className = @"assign) BOOL ";
-	} else if ([className containsString:@"string"]) {
+	} else if ([className containsString:@"string"] || [className containsString:@"null"]) {
 		className = @"copy) NSString *";
-	} else if ([className containsString:@"null"]) {
-		className = @"strong) NSNull *";
 	}
 
 	return className;
+}
+
+- (NSString *)propertyOfObject:(id)object {
+	NSString *className = [NSStringFromClass([object class]) lowercaseString];
+	NSLog(@">>> %@", className);
+	NSString *property = nil;
+	if ([className containsString:@"array"]) {
+		property = @"strong) NSArray *";
+	} else if ([className containsString:@"number"]) {
+		if (CFNumberIsFloatType((CFNumberRef)object)) {
+			property = @"assign) CGFloat ";
+		} else {
+			property = @"assign) NSInteger ";
+		}
+	} else if ([className containsString:@"boolean"]) {
+		property = @"assign) BOOL ";
+	} else if ([className containsString:@"string"] || [className containsString:@"null"]) {
+		property = @"copy) NSString *";
+	}
+
+	return property;
 }
 
 - (NSString *)capitalizedFirstLetter:(NSString *)string {
